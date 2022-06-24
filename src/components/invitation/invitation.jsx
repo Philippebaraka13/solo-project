@@ -19,7 +19,7 @@ const NewInvitationForm = (props) => {
         } else if (!regEx.test(invitation) && invitation !== "") {
             setMessage("Email is not Valid");
         } else {
-            setMessage("okokokok");
+            setMessage("");
         }
 
     }
@@ -32,7 +32,7 @@ const NewInvitationForm = (props) => {
 
         dispatch({
             type: 'ADD_INVITATION',
-            payload: { username:invitation, book_id: id }
+            payload: { email:invitation, book_id: id }
         });
         // history,push('/');
     };

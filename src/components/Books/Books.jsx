@@ -3,11 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import NewInvitationForm from "../invitation/invitation";
 import NewBookForm from "../newPage/newPage";
-
+import './Books.css';
 
 
 function Books() {
     const books = useSelector(store => store.books)
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -15,22 +16,35 @@ function Books() {
     }, [dispatch]);
 
     return (
+
         <div>
             <h2>Books</h2>
-            {books.map(book => (
-                <div key={book.id}>
-                    <h4>{book.title}</h4>
-                    <p>{book.description}</p>
-                    <div>
-                        <Link to={`/books/${book.id}`}>View Book</Link>
-                    </div>
-                    <Link to={`/books/${book.id}`}>Begin to write</Link>
-                </div>
-            ))}
-            
+            <tbody>
+                <table>
+                    <tr>
+                
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>View Book</th>
+                        {/* <th>Begin to write</th> */}
+                    </tr>
+                    {books.map(book => (
+                        <tr key={book.id}>
+                            <td>{book.title}</td>
+                            <td>{book.description}</td>
+                            <td>
+                                <Link to={`/books/${book.id}`}>View</Link>
+                            </td>
+                            {/* <Link to={`/books/${book.id}`}>Begin</Link> */}
+
+                        </tr>
+                    ))
+                    }
+                </table>
+            </tbody>
             <NewBookForm />
 
-        </div>
+        </div >
     )
 }
 export default Books;

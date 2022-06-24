@@ -12,12 +12,14 @@ const {
   const mg = mailgun.client({username: 'api', key: process.env.MAILGUN_API_KEY || 'test-api-key' });
 
 
-
+//req.boy
 
 router.get('/', (req, res) => {
     // GET route code here
-    const queryText = `SELECT * FROM "invitation" ORDER BY "book_id";`
-    pool.query(queryText)
+    const queryText = `SELECT books.*, invitation.email FROM "books" 
+    JOIN "invitation" ON "invitation".book_id = "books"."id" 
+    WHERE "invitation"."email" = $1;`
+    pool.query(queryText, [req.user.username])
       .then(result => {
         res.send(result.rows);
       })
@@ -31,13 +33,13 @@ router.get('/', (req, res) => {
     // POST route code here
     console.log("line 30",req.body);
   
-    const insertStory = `INSERT INTO "invitation" ("book_id", "username") VALUES ($1, $2);`
-    pool.query(insertStory, [req.body.book_id, req.body.username])
+    const insertStory = `INSERT INTO "invitation" ("book_id", "email") VALUES ($1, $2);`
+    pool.query(insertStory, [req.body.book_id, req.body.email])
       .then(result => {
 
         mg.messages.create('sandbox5260d368e46e424ea580450781456a2d.mailgun.org', {
             from: "BookStory<kamokamophilippe12@gmail.com>",
-            to: [req.body.username],
+            to: [req.body.email],
             subject: "Hello",
             text: "Testing some Mailgun awesomness!",
             html: "<h1>Testing some Mailgun awesomness!</h1>"
