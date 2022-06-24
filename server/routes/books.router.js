@@ -53,17 +53,22 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-  const queryText = `DELETE FROM "books" WHERE id = $1;`;
+  const queryText = `
+  DELETE FROM "stories" WHERE "book_id"=$1;
+  DELETE FROM "invitation" WHERE "book_id"=$1; 
+  DELETE FROM "books" WHERE "books"."id"=$1;`;
+  console.log("delete2", req.params.id);
   pool.query(queryText, [req.params.id])
     .then(result => {
       res.sendStatus(204);
 
     }).catch(error => {
+      console.log("err",error);
       res.sendStatus(500);
     })
 })
 router.put('/:id', (req, res) => {
-  const queryText = `UPDATE books SET "complete" = Not "complete" WHERE "id" =$1;`;
+  const queryText = `UPDATE books SET "complete" = Not "complete" WHERE "id" = $1;`;
   pool.query(queryText, [req.params.id])
     .then(result => {
       console.log(req.params)

@@ -1,7 +1,11 @@
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
+    width: 85%;
+    text-align: center;
+    margin:7%
+    
+
   }
   
   td, th {
@@ -13,3 +17,10 @@ table {
   tr:nth-child(even) {
     background-color: #dddddd;
   }
+.table2{
+  
+    text-align: center;
+}
+tbody{
+    text-align: center;
+}

@@ -21,6 +21,7 @@ function* fetchBookAddSaga(action) {
     }
 }
 function* fetchBookDeleteSaga(action) {
+    console.log("delete",action.payload);
     try {
         yield axios.delete(`/api/book/${action.payload}`);
         yield put({ type: 'FETCH_BOOK' });

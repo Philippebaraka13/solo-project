@@ -19,8 +19,9 @@ function Invitations() {
         }
         if (invitation && invitation.length === 0) {
             dispatch({ type: 'FETCH_INVITATION' });
+            console.log("snsnssskkdsksskd");
         }
-    }, [dispatch, books, invitation]);
+    }, [dispatch]);
 
     if (books.length === 0) {
         return (
