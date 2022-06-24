@@ -37,7 +37,7 @@ router.get('/', (req, res) => {
 
         mg.messages.create('sandbox5260d368e46e424ea580450781456a2d.mailgun.org', {
             from: "BookStory<kamokamophilippe12@gmail.com>",
-            to: ["kamokamophilippe13@gmail.com"],
+            to: [req.body.username],
             subject: "Hello",
             text: "Testing some Mailgun awesomness!",
             html: "<h1>Testing some Mailgun awesomness!</h1>"
@@ -50,7 +50,7 @@ router.get('/', (req, res) => {
             res.sendStatus(500);
           }); // logs any error
 
-          
+
 
        
       }).catch(err => {

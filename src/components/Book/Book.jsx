@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import NewStoryForm from "../stories/stories";
 import {Switch} from "antd";
+import NewInvitationForm from "../invitation/invitation";
 
 function Book() {
     const params = useParams();
@@ -49,6 +50,7 @@ console.log("param",id );
             </div>
             <div>
                 <NewStoryForm />
+                <NewInvitationForm />
             </div>
         </div>
     );

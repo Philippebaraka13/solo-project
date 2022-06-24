@@ -45,7 +45,7 @@ const NewBookForm = (props) => {
           onChange={(event) => setDate(event.target.value)}
         />
 
-        <button type="submit" onClick={() =>history.push('/newinvitation')}>
+        <button type="submit" >
           start new book 
         </button>
       </form>

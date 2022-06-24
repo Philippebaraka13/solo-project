@@ -31,7 +31,7 @@ function RegisterForm() {
         <label htmlFor="username">
           Username:
           <input
-            type="text"
+            type="email"
             name="username"
             value={username}
             required
