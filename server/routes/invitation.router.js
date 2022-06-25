@@ -61,7 +61,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     })
 });
 router.delete('/:id', (req, res) => {
-  const queryText = `DELETE FROM "invitation" WHERE "boo_id" =$1;`;
+  const queryText = `DELETE FROM "invitation" WHERE "book_id" =$1;`;
   pool.query(queryText, [req.params.id])
     .then(result => {
       res.sendStatus(204);
