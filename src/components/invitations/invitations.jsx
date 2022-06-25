@@ -21,7 +21,7 @@ function Invitations() {
             dispatch({ type: 'FETCH_INVITATION' });
             console.log("snsnssskkdsksskd");
         }
-    }, [dispatch]);
+    }, [dispatch, books, invitation]);
 
     if (books.length === 0) {
         return (

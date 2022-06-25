@@ -8,17 +8,22 @@ import './Books.css';
 
 
 function Books() {
-    const books = useSelector(store => store.books)
-    console.log("books", books)
+    const books = useSelector(store => store.books);
+    const story = useSelector(store => store.stories);
+    const invitation = useSelector(store => store.invitation);
+
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch({ type: 'FETCH_BOOK' });
     }, [dispatch]);
 
-    const deleteBook = (books) => {
+    const deleteBook = (books, story, invitation) => {
         console.log("sada", books.id);
         dispatch({ type: 'DELETE_BOOK', payload: books.id })
+        dispatch({ type: 'DELETE_STORY', payload: books.id })
+        dispatch({ type: 'DELETE_INVITATION', payload: books.id })
+        
     }
 
     return (
@@ -45,7 +50,7 @@ function Books() {
                             {/* <Link to={`/books/${book.id}`}>Begin</Link> */}
                             <td>
                                 {/* <span>{books.id}</span> */}
-                                <button onClick={() => deleteBook(book)}>Delete</button>
+                                <button onClick={() => deleteBook(book,story, invitation)}>Delete</button>
                             </td>
                         </tr>
                     ))
