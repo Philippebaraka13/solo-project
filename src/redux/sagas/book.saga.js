@@ -31,7 +31,7 @@ function* fetchBookDeleteSaga(action) {
 }
 function* fetchUpdateBook(action) {
     try {
-        yield axios.put(`/api/book/${action.id}`, action.payload);
+        yield axios.put(`/api/book/${action.payload}`);
         yield put({ type: 'FETCH_BOOK' });
     } catch (err) {
         console.log(`err`, err);

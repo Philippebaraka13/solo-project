@@ -67,13 +67,16 @@ Button
   border-radius: 0;
   background: none;
   font: inherit;
+  background-color: white;
+  padding: 10px;
+  border-radius: 15px;
   color: #444;
 }
 
 .btn_asLink:hover {
-  background-color: transparent;
+  background-color: black;
   border-color: #008183;
-  color: #008183;
+  color: white;
 }
 
 /* --------------------------------------------------------------------------------
@@ -111,18 +114,18 @@ input {
   margin-bottom: 10px;
 }
 
-body{
+.library {
   background-image: url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80");
   background-repeat: no-repeat;
   background-size: 100%;
+  height: 1500vh;
 }
 
-p{
-color:#efefef;
-}
-h2 {
-  color: #efefef;
-}
-.loginpage{
-  background-image: url("https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+
+
+.userpage{
+  background-image: url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1590&q=80");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 94vh;
 }

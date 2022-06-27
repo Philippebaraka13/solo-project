@@ -15,7 +15,7 @@
   } */
   
   #text3d {
-    width: 100%;
+    width: 100vw;
     margin: 0 auto 0 auto;
     font-family: 'Lato', sans-serif;
     line-height: 280px;
@@ -24,6 +24,7 @@
     text-align: center;
     text-transform: uppercase;
     text-rendering: optimizeLegibility;
+    z-index: -1;
   }
   
   /*	
@@ -32,7 +33,6 @@
   ============
   */
   #text3d::before {
-    content:"";
     width: 100%;
     height: 750px;
     position: absolute;
@@ -59,6 +59,7 @@
   #text3d {
       color: #70869d;
       letter-spacing: .15em;
+      user-select: none;
       text-shadow: 
         -1px -1px 1px #efede3, 
         0px 1px 0 #2e2e2e, 
@@ -80,4 +81,7 @@
         5px 23px 5px rgba(0, 0, 0, 0.3),
         8px 27px 8px rgba(0, 0, 0, 0.5),
         8px 28px 35px rgba(0, 0, 0, 0.9);
+   }
+   .formPanel{
+    background-color: yellow;
    }

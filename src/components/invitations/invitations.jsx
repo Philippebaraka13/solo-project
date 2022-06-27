@@ -11,6 +11,9 @@ function Invitations() {
     const params = useParams();
     const books = useSelector(store => store.books);
     const invitation = useSelector(store => store.invitation);
+    const users = useSelector(store => store.user);
+    console.log('invitation', invitation);
+    console.log('user', users, books)
     const dispatch = useDispatch();
     const id = +params.id;
     console.log('param', params.id);
@@ -22,38 +25,56 @@ function Invitations() {
         if (invitation.length === 0) {
             dispatch({ type: 'FETCH_INVITATION' });
         }
+        if (users.length === 0) {
+            dispatch({ type: 'FETCH_USER' });
+        }
     }, []);
 
     if (books.length === 0) {
         return (
             <h1>No Books invitation yet</h1>
         )
+
+    }
+    if (invitation.length === 0) {
+        return (
+            <h1>not</h1>
+        )
     }
 
     const book = books.find((book) => book.id === id);
+    console.log('idddddd', book);
+    // const user = users.filter((user) => user_id == id);
+    //     const filteredUsers = users.filter((user) => user.username === id);
 
-    console.log("hello", book)
-    const filteredInvitation = invitation.filter(invitations => invitations.book_id === id);
-    console.log('invitation',filteredInvitation)
+    // console.log("hello", book);
+    //     console.log("hello", filteredUsers)
+    //     const filteredInvitation = invitation.filter(invitations => invitations.user_id === id);
+    //     console.log('invitation',filteredInvitation)
 
 
     return (
         <>
             <h1> invitations </h1>
             <div>
-                
-                <h1>Book Title: {books[0].title}</h1>
-                {/* <Link to={`/books/${book.id}`}>View Book</Link> */}
+                {invitation.map(invitations =>(
+                    <ul key={invitations.id}>
+                    <li>Title book: {invitations.title},   Description book:{invitations.description}</li>
+                  
+                    <button>
+                        <Link to={`/books/${invitations.id}`}>view book</Link>
+                    </button>
+
+
+                </ul>
+                ))}
+
             </div>
-            <h2>Description of the book: {books[0].description}</h2>
-            <button>view book
-                {/* <Link to={`/books/${book.id}`}>Detail</Link> */}
-            </button>
-            <NewStoryForm/>
+          
         </>
     )
 }
-
+//invitation.id is book id 
 export default Invitations;
 
 

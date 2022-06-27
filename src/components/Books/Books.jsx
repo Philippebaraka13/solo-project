@@ -18,21 +18,23 @@ function Books() {
         dispatch({ type: 'FETCH_BOOK' });
     }, [dispatch]);
 
-    const updateBook = (books) => {
+    const updateBook = (book) => {
         // event.preventDefault();
         dispatch({
             type: 'UPDATE_BOOK',
-            payload:{ complete: completeBook, id:books.id}
+            payload: book.id
 
         });
         setCompleteBook(true);
+        console.log('BOOKS',book);
+        console.log('BOOKS ID',book.id);
     }
 
-    const deleteBook = (books, story, invitation) => {
-        console.log("sada", books.id);
-        dispatch({ type: 'DELETE_BOOK', payload: books.id })
-        dispatch({ type: 'DELETE_STORY', payload: books.id })
-        dispatch({ type: 'DELETE_INVITATION', payload: books.id })
+    const deleteBook = (book, story, invitation) => {
+        console.log("sada", book.id);
+        dispatch({ type: 'DELETE_BOOK', payload: book.id })
+        dispatch({ type: 'DELETE_STORY', payload: book.id })
+        dispatch({ type: 'DELETE_INVITATION', payload: book.id })
 
 
     }
@@ -44,7 +46,7 @@ function Books() {
             <h2>Books</h2>
             <table>
                 <tbody>
-                    <tr className="tr1">
+                    <tr className="tr">
                         <th>Title</th>
                         <th>Description</th>
                         <th>View Book</th>
@@ -65,7 +67,7 @@ function Books() {
                                 <button onClick={() => deleteBook(book, story, invitation)}>Delete</button>
                             </td>
                             <td>
-                                <button onClick={() => updateBook()}>complete</button>
+                                <button onClick={() => updateBook(book)}>complte</button>
                             </td>
                         </tr>
                     ))
