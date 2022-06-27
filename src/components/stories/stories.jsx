@@ -18,6 +18,7 @@ const NewStoryForm = (props) => {
             type: 'ADD_STORY',
             payload: { content: content, id:id }
         });
+        setContent('');
         // history,push('/');
     };
     return (

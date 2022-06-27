@@ -104,7 +104,7 @@ function App() {
               <Redirect to="/user" />
               :
               // Otherwise, show the login page
-              <LoginPage />
+              <LoginPage className="loginpage" />
             }
           </Route>
 
@@ -139,7 +139,7 @@ function App() {
           <Route
             // shows AboutPage at all times (logged in or not)
             exact
-            path="/newinvitation"
+            path="/newinvitation/"
           >
             <NewInvitationForm />
           </Route>
@@ -147,7 +147,7 @@ function App() {
           <Route
             // shows AboutPage at all times (logged in or not)
             exact
-            path="/invitations"
+            path="/invitations/"
           >
             <Invitations />
           </Route>

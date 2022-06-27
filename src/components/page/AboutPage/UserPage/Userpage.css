@@ -1,4 +1,4 @@
-table {
+.table4 {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 85%;
@@ -9,21 +9,24 @@ table {
   }
   
   td, th {
-    border: 1px solid #dddddd;
+    border: 1px solid #87a218;
     text-align: left;
     padding: 8px;
   }
-  th {
+  
+  .tr {
     background-color: #d17f7f;
   }
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
-.table2{
+.table3{
   
     text-align: center;
 }
-tbody{
+.tbody{
     text-align: center;
-    background-color: rgb(67, 113, 99);
+    background-color: #b5c189;
+}
+.h2{
+    color:rgb(217, 213, 149);
+    font-size: 30px; 
+    
 }

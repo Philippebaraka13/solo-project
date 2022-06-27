@@ -21,14 +21,14 @@ function* fetchBookAddSaga(action) {
     }
 }
 function* fetchBookDeleteSaga(action) {
-    console.log("delete",action.payload);
+    console.log("delete", action.payload);
     try {
         yield axios.delete(`/api/book/${action.payload}`);
         yield put({ type: 'FETCH_BOOK' });
     } catch (err) {
         console.log(`err`, err);
     }
-} 
+}
 function* fetchUpdateBook(action) {
     try {
         yield axios.put(`/api/book/${action.id}`, action.payload);
@@ -46,6 +46,7 @@ function* bookSaga() {
     yield takeEvery('ADD_BOOK', fetchBookAddSaga);
     yield takeEvery('DELETE_BOOK', fetchBookDeleteSaga);
     yield takeEvery('UPDATE_BOOK', fetchUpdateBook);
+    
 
 }
 

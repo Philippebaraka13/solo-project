@@ -19,11 +19,15 @@ const NewBookForm = (props) => {
             type:'ADD_BOOK',
             payload: {title:title, description:description, date:date}
         });
+        setTitle('');
+        setDescription('');
+        setDate('');
         // history,push('/');
     };
     return (
         <section>
       <h2>Add Book</h2>
+          <h3>For date just enter "Now"</h3>
       <form onSubmit={handleSubmit} className="add-book-form">
         <input 
           required 
