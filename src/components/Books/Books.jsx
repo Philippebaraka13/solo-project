@@ -23,20 +23,20 @@ function Books() {
         dispatch({
             type: 'UPDATE_BOOK',
             payload: book.id
-
+            
         });
-        setCompleteBook(true);
-
+        
+        console.log(books)
         console.log('BOOKS',book);
         console.log('BOOKS ID',book.id);
     }
-
+    
     const deleteBook = (book) => {
         console.log("sada", book.id);
         dispatch({ type: 'DELETE_BOOK', payload: book.id })
         dispatch({ type: 'DELETE_STORY', payload: book.id })
         dispatch({ type: 'DELETE_INVITATION', payload: book.id })
-
+        
 
     }
 
@@ -52,7 +52,7 @@ function Books() {
                         <th>Description</th>
                         <th>View Book</th>
                         <th>Delete Book</th>
-                        <th>Complete</th>
+                        <th>Complete Book</th>
                         <th>true/false</th>
                         {/* <th>Begin to write</th> */}
                     </tr>
@@ -69,9 +69,9 @@ function Books() {
                                 <button onClick={() => deleteBook(book, story, invitation)}>Delete</button>
                             </td>
                             <td>
-                                <button onClick={() => updateBook(book)}>complete{book.complete}</button>
+                                <button onClick={() => updateBook(book)}>complete</button>
                             </td>
-                            <td>{completeBook? 'True': 'False'}</td>
+                            <td>{book.complete ? 'true' : 'false'}</td>
                         </tr>
 
                     ))
