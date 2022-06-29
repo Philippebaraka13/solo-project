@@ -11,11 +11,14 @@ function Books() {
     const story = useSelector(store => store.stories);
     const invitation = useSelector(store => store.invitation);
     const [completeBook, setCompleteBook] = useState(false);
-
+    const bookContent = useSelector(store => store.bookContent);
+    console.log('bookContent', bookContent);
+    console.log(books)
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch({ type: 'FETCH_BOOK' });
+        dispatch({ type: 'FETCH_BOOK_CONTENT' });
     }, [dispatch]);
 
     const updateBook = (book) => {
@@ -23,28 +26,65 @@ function Books() {
         dispatch({
             type: 'UPDATE_BOOK',
             payload: book.id
-            
+
         });
-        
-        console.log(books)
-        console.log('BOOKS',book);
-        console.log('BOOKS ID',book.id);
+
+        console.log('BOOKS', book);
+        console.log('BOOKS ID', book.id);
+
     }
-    
+
     const deleteBook = (book) => {
         console.log("sada", book.id);
         dispatch({ type: 'DELETE_BOOK', payload: book.id })
         dispatch({ type: 'DELETE_STORY', payload: book.id })
         dispatch({ type: 'DELETE_INVITATION', payload: book.id })
-        
 
     }
 
     return (
 
+
+
         <div className="table2">
 
             <h2>Books</h2>
+            <table>
+                <tbody>
+                    <tr className="tr">
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>View Book</th>
+                        <th>Delete Book</th>
+                        <th>Complete Book</th>
+                        <th>true/false</th>
+                        {/* <th>Begin to write</th> */}
+                    </tr>
+                    {bookContent.map(books => (
+                        <tr key={books.id}>
+                            <td>{books.title}</td>
+                            <td>{books.description}</td>
+                            <td>
+                                <Link to={`/books/${books.id}`}>Detail</Link>
+                            </td>
+                            {/* <Link to={`/books/${book.id}`}>Begin</Link> */}
+                            <td>
+                                {/* <span>{books.id}</span> */}
+                                <button onClick={() => deleteBook(books, story, invitation)}>Delete</button>
+                            </td>
+                            <td>
+                                <button onClick={() => updateBook(books)}>complete</button>
+                            </td>
+                            <td>{books.complete ? 'true' : 'false'}</td>
+                        </tr>
+
+                    ))
+                    }
+                </tbody>
+            </table>
+            <NewBookForm />
+
+            <h2>invitations books</h2>
             <table>
                 <tbody>
                     <tr className="tr">
@@ -78,7 +118,6 @@ function Books() {
                     }
                 </tbody>
             </table>
-            <NewBookForm />
 
         </div >
     )

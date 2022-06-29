@@ -8,12 +8,30 @@ const router = express.Router();
 /**
  * GET route template
  */
+//  router.get('/', rejectUnauthenticated, (req, res) => {
+//   // GET route code here
+
+//   const queryText = `SELECT * FROM "books" WHERE "user_id" =$1;
+//   ;`
+//   pool.query(queryText, [req.user.id])
+//     .then(result => {
+//       res.send(result.rows);
+//     })
+//     .catch(error => {
+//       console.log('Error', error);
+//       res.sendStatus(500)
+//     })
+// });
+
 router.get('/', rejectUnauthenticated, (req, res) => {
   // GET route code here
 
-  const queryText = `SELECT * FROM "books" WHERE "user_id"=$1;`
-
-  pool.query(queryText, [req.user.id])
+  const queryText = `SELECT books.* , username FROM "books" 
+  JOIN "invitation" on "invitation".book_id= "books".id
+  JOIN "user" on "user".id= "books".user_id
+  WHERE "books"."user_id"= $1 OR "invitation".email =$2;
+  ;`
+  pool.query(queryText, [req.user.id, req.user.username])
     .then(result => {
       res.send(result.rows);
     })
@@ -22,6 +40,21 @@ router.get('/', rejectUnauthenticated, (req, res) => {
       res.sendStatus(500)
     })
 });
+//  router.get('/', rejectUnauthenticated, (req, res) => {
+//   // GET route code here
+
+//   const queryText = `SELECT * FROM "books" WHERE "user_id" =$1;
+//   ;`
+//   pool.query(queryText, [req.user.id])
+//     .then(result => {
+//       res.send(result.rows);
+//     })
+//     .catch(error => {
+//       console.log('Error', error);
+//       res.sendStatus(500)
+//     })
+// });
+
 
 
 /**

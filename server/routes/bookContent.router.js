@@ -7,7 +7,7 @@ const router = express.Router();
  */
  router.get('/', (req, res) => {
     // GET route code here
-    const queryText = `SELECT * FROM "stories" WHERE "book_id" = $1;
+    const queryText = `SELECT * FROM "books" WHERE "user_id" = $1;
     `;
     pool.query(queryText, [req.user.id])
       .then(result => {
