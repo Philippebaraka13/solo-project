@@ -44,21 +44,16 @@ function Invitations() {
 
     const book = books.find((book) => book.id === id);
     console.log('idddddd', book);
-    // const user = users.filter((user) => user_id == id);
-    //     const filteredUsers = users.filter((user) => user.username === id);
-
-    // console.log("hello", book);
-    //     console.log("hello", filteredUsers)
-    //     const filteredInvitation = invitation.filter(invitations => invitations.user_id === id);
-    //     console.log('invitation',filteredInvitation)
-
+   
 
     return (
         <>
-            <h1> invitations </h1>
-            <div>
+        <div className="userpage">
+            <div className="content">
+            <h1 className="text_shadows"> invitations </h1>
+            </div>
                 {invitation.map(invitations =>(
-                    <ul key={invitations.id}>
+                    <ul key={invitations.id} >
                     <li>Title book: {invitations.title},   Description book:{invitations.description}</li>
                   
                     <button>
@@ -70,7 +65,7 @@ function Invitations() {
                 ))}
 
             </div>
-          
+            
         </>
     )
 }

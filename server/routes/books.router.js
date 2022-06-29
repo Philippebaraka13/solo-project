@@ -29,7 +29,8 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   const queryText = `SELECT books.* , username FROM "books" 
   JOIN "invitation" on "invitation".book_id= "books".id
   JOIN "user" on "user".id= "books".user_id
-  WHERE "books"."user_id"= $1 OR "invitation".email =$2;
+  WHERE "books"."user_id"= $1 OR "invitation".email =$2 
+  ORDER BY "books"."id";
   ;`
   pool.query(queryText, [req.user.id, req.user.username])
     .then(result => {
@@ -107,6 +108,18 @@ router.put('/:id', (req, res) => {
       console.log(req.params)
       res.sendStatus(204)
     }).catch(error => {
+      res.sendStatus(500)
+    })
+})
+router.put('/lock/:id', (req, res) => {
+  const queryText = `UPDATE books SET "lock" = Not "lock" WHERE "id" = $1;`;
+
+  pool.query(queryText, [req.params.id])
+    .then(result => {
+      console.log(req.params)
+      res.sendStatus(204)
+    }).catch(error => {
+      console.log("lock",error)
       res.sendStatus(500)
     })
 })

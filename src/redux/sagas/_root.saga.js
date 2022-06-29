@@ -6,7 +6,6 @@ import bookSaga from './book.saga';
 import storiesSaga from './stories.saga';
 import invitation from './invitation.saga';
 import invitationSaga from './invitation.saga';
-import bookContentSaga from './bookContent';
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
 // This is imported in index.js as rootSaga
@@ -22,7 +21,5 @@ export default function* rootSaga() {
     bookSaga(),
     storiesSaga(),
     invitationSaga(),
-    bookContentSaga()
-
   ]);
 }

@@ -46,7 +46,7 @@ function UserPage() {
               <th>Description</th>
               <th>Date Made</th>
             </tr>
-            {books.map(book => (
+            {bookContent.map(book => (
               <tr key={book.id}>
                 <td>{book.title}</td>
                 <td>{book.description}</td>

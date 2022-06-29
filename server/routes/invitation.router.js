@@ -57,8 +57,8 @@ router.post('/', rejectUnauthenticated, (req, res) => {
         from: "BookStory<kamokamophilippe12@gmail.com>",
         to: [req.body.email],
         subject: "I invite you",
-        text: "http://localhost:3000/#/books/25",
-        html: "<h1>http://localhost:3000/#/books/25</h1>"
+        text: "http://localhost:3000/#/books/",
+        html: "<h1>http://localhost:3000/#/books/</h1>"
       })
         .then(msg => {
           res.sendStatus(201);

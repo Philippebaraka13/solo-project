@@ -6,7 +6,9 @@ import axios from 'axios';
 function* fetchBookSaga(action) {
     try {
         const response = yield axios.get('api/book');
+        const response2 = yield axios.get('api/bookContent');
         yield put({ type: 'SET_BOOK', payload: response.data })
+        yield put({ type: 'SET_BOOK_CONTENT', payload: response2.data })
     } catch (error) {
         console.error(`erroe`, error);
     }
@@ -37,6 +39,14 @@ function* fetchUpdateBook(action) {
         console.log(`err`, err);
     }
 }
+function* setBookLock(action) {
+    try {
+        yield axios.put(`/api/book/lock/${action.payload}`);
+        yield put({ type: 'FETCH_BOOK' });
+    } catch (err) {
+        console.log(`err`, err);
+    }
+}
 
 
 // worker Saga: will be fired on "LOGOUT" actions
@@ -46,6 +56,7 @@ function* bookSaga() {
     yield takeEvery('ADD_BOOK', fetchBookAddSaga);
     yield takeEvery('DELETE_BOOK', fetchBookDeleteSaga);
     yield takeEvery('UPDATE_BOOK', fetchUpdateBook);
+    yield takeEvery('SET_BOOK_LOCK', setBookLock);
     
 
 }

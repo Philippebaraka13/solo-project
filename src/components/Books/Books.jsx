@@ -45,7 +45,7 @@ function Books() {
     return (
 
 
-
+<div className='userpage'>
         <div className="table2">
 
             <h2>Books</h2>
@@ -67,15 +67,19 @@ function Books() {
                             <td>
                                 <Link to={`/books/${books.id}`}>Detail</Link>
                             </td>
-                            {/* <Link to={`/books/${book.id}`}>Begin</Link> */}
                             <td>
-                                {/* <span>{books.id}</span> */}
-                                <button onClick={() => deleteBook(books, story, invitation)}>Delete</button>
+                                <button onClick={() => {
+                                    deleteBook(books)
+                                    dispatch({ type: 'FETCH_BOOK' });
+                                }}>Delete</button>
                             </td>
                             <td>
-                                <button onClick={() => updateBook(books)}>complete</button>
+                                <button onClick={async () => {
+                                    updateBook(books)
+                                    dispatch({ type: 'FETCH_BOOK' });
+                                }}>complete</button>
                             </td>
-                            <td>{books.complete ? 'true' : 'false'}</td>
+                            <td>{books.complete ? 'yes' : 'no'}</td>
                         </tr>
 
                     ))
@@ -92,8 +96,7 @@ function Books() {
                         <th>Description</th>
                         <th>View Book</th>
                         <th>Delete Book</th>
-                        <th>Complete Book</th>
-                        <th>true/false</th>
+                       
                         {/* <th>Begin to write</th> */}
                     </tr>
                     {books.map(book => (
@@ -106,12 +109,13 @@ function Books() {
                             {/* <Link to={`/books/${book.id}`}>Begin</Link> */}
                             <td>
                                 {/* <span>{books.id}</span> */}
-                                <button onClick={() => deleteBook(book, story, invitation)}>Delete</button>
+                                <button onClick={() => {
+                                    deleteBook(book)
+                                    dispatch({ type: 'FETCH_BOOK' });
+                                    dispatch({ type: 'FETCH_BOOK_CONTENT' });
+                                }}>Delete</button>
                             </td>
-                            <td>
-                                <button onClick={() => updateBook(book)}>complete</button>
-                            </td>
-                            <td>{book.complete ? 'true' : 'false'}</td>
+
                         </tr>
 
                     ))
@@ -120,6 +124,7 @@ function Books() {
             </table>
 
         </div >
+        </div>
     )
 }
 export default Books;
