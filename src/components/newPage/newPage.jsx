@@ -26,8 +26,8 @@ const NewBookForm = (props) => {
     };
     return (
         <section>
-      <h2>Add Book</h2>
-          <h3>For date just enter "Now"</h3>
+      <h2 className='h234'>Add Book</h2>
+          <h3 className='h3'>For date just enter "Now"</h3>
       <form onSubmit={handleSubmit} className="add-book-form">
         <input 
           required 

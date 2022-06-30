@@ -36,9 +36,12 @@ function UserPage() {
         <LogOutButton className="btn" />
       </div>
       <div className="table3" >
-
-            <h1>BOOKSTORY</h1>
-        <h2>Books</h2>
+      <div id="box">
+  <p id="flashlight">
+    <span id="flash">BOOK</span>
+    <span id="light">STORY</span>
+  </p>
+</div>         
         <table className="table4" >
           <tbody className='tbody'>
             <tr className='tr'>

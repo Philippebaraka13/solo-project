@@ -48,7 +48,7 @@ function Books() {
 <div className='userpage'>
         <div className="table2">
 
-            <h2>Books</h2>
+            <h2 className="h22">Books</h2>
             <table>
                 <tbody>
                     <tr className="tr">
@@ -88,7 +88,7 @@ function Books() {
             </table>
             <NewBookForm />
 
-            <h2>invitations books</h2>
+            <h2 className="h23">invitations books</h2>
             <table>
                 <tbody>
                     <tr className="tr">

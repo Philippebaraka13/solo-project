@@ -47,13 +47,19 @@ function Book() {
 
     console.log("booknew", book);
     return (
-        <div>
+        <div className="wrapper">
+            <div className="divbook">
+                
+            <div title={book.title} class="cover">
+
             <h1>{book.title}</h1>
-            <h3>{book.lock? 'is locked': "is not locked"}</h3>
             {filteredStories.map((story) => (
-                <p key={story.id}>{story.content}</p>
-            ))}
-            <div>
+                <p className="paral" key={story.id}>{story.content}</p>
+                ))}
+                </div>
+                </div>
+                <h3>{book.lock? 'is locked': "is not locked"}</h3>
+            <div className="switch">
                {(book.user_id === user.id ) && <Switch checked={book.lock} onClick={handClick} />}
                
             </div>

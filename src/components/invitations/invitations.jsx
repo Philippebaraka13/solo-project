@@ -48,20 +48,21 @@ function Invitations() {
 
     return (
         <>
+        
         <div className="userpage">
             <div className="content">
-            <h1 className="text_shadows"> invitations </h1>
+            <h1  contenteditable data-heading="Dimensions"> invitations </h1>
             </div>
+            
                 {invitation.map(invitations =>(
-                    <ul key={invitations.id} >
-                    <li>Title book: {invitations.title},   Description book:{invitations.description}</li>
+                    <ul key={invitations.id} className="ul">
+                    <li>Title book: {invitations.title},   Description book:  {invitations.description}</li>
                   
                     <button>
                         <Link to={`/books/${invitations.id}`}>view book</Link>
                     </button>
-
-
                 </ul>
+                
                 ))}
 
             </div>
