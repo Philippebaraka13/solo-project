@@ -158,6 +158,7 @@ input {
   font-family: 'georgia';
   font-weight: bold;
   text-align: center;
+  font-family: fantasy;
 }
 
 .h234 {
@@ -166,6 +167,8 @@ input {
   font-family: 'georgia';
   font-weight: bold;
   text-align: center;
+  font-size: 45px;
+  font-family: fantasy;
 }
 
 .ul {
@@ -174,6 +177,7 @@ input {
   font-family: 'georgia';
   font-weight: bold;
   text-align: center;
+  font-family: fantasy;
 }
 
 .divbook {
@@ -181,8 +185,9 @@ input {
   width: 40%;
   margin: auto;
   font-family: cormorant infant;
-  
+
 }
+
 p.para1:first-letter {
   font-size: 100px;
   display: block;
@@ -194,12 +199,12 @@ p.para1:first-letter {
 .cover {
   background: linear-gradient(to right, rgb(60, 13, 20) 3px, rgba(255, 255, 255, 0.5) 5px, rgba(255, 255, 255, 0.25) 7px, rgba(255, 255, 255, 0.25) 10px, transparent 12px, transparent 16px, rgba(255, 255, 255, 0.25) 17px, transparent 22px);
   box-shadow: 0 0 5px -1px rgb(22, 20, 20), inset -1px 1px 2px rgba(255, 255, 255, 0.5);
-  margin:2%;
+  margin: 2%;
   border-radius: 7px;
 
-  text-align:justify;
+  text-align: justify;
   padding: 10%;
- 
+
 }
 
 .wrapper {
@@ -208,12 +213,51 @@ p.para1:first-letter {
   align-items: flex-start;
   flex-direction: row-reverse;
   background-image: url("https://images.unsplash.com/photo-1520970014086-2208d157c9e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
-  background-repeat:repeat;
+  background-repeat: repeat;
   background-size: 100%;
   height: 100vh;
 }
 
-.author{
-  text-align: right;
-  text-overflow: ellipsis;
+.author {
+  text-align: -webkit-center;
+  text-overflow: inherit;
+  font-family: fantasy;
+}
+
+.invitation {
+  width: 70%;
+  color: deeppink;
+  font-size: 1rem;
+  text-transform: lowercase;
+
+}
+
+.newInvitation {
+  text-align: center;
+
+  font-family: 'georgia';
+  font-weight: bold;
+  text-align: center;
+
+}
+
+.listnew {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7em;
+  background-color: bisque;
+  width: 55%;
+  text-align: center;
+}
+
+.invitationpage {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cover {
+  background-color: #efefef;
 }

@@ -44,29 +44,31 @@ function Invitations() {
 
     const book = books.find((book) => book.id === id);
     console.log('idddddd', book);
-   
+
 
     return (
         <>
-        
-        <div className="userpage">
-            <div className="content">
-            <h1  contenteditable data-heading="Dimensions"> invitations </h1>
-            </div>
-            
-                {invitation.map(invitations =>(
-                    <ul key={invitations.id} className="ul">
-                    <li>Title book: {invitations.title},   Description book:  {invitations.description}</li>
-                  
-                    <button>
-                        <Link to={`/books/${invitations.id}`}>view book</Link>
-                    </button>
-                </ul>
-                
-                ))}
 
+            <div className="userpage" >
+            <div className="invitationpage">
+                <div className="content">
+                    <h1 contenteditable data-heading="Dimensions" className="newInvitation"> invitations </h1>
+                </div>
+                <div className="listnew">
+                    {invitation.map(invitations => (
+                        <ul key={invitations.id} className="ul">
+                            <li>Title book: {invitations.title},   Description of book:  {invitations.description}</li>
+
+                            <button>
+                                <Link to={`/books/${invitations.id}`}>view book</Link>
+                            </button>
+                        </ul>
+
+                    ))}
+                </div>
+                </div>
             </div>
-            
+
         </>
     )
 }
