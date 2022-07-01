@@ -23,7 +23,8 @@ const NewStoryForm = (props) => {
     };
     return (
         <section>
-            <h2 className='invitation2'>Add content</h2>
+            <h2 className='invitation2'>Edit Book</h2>
+            <p className='invitation22'>Start to edit the book⇩</p>
             <form onSubmit={handleSubmit} className="add-story-form">
                 <textarea className='textarea'
                     required

@@ -32,31 +32,32 @@ const NewInvitationForm = (props) => {
 
         dispatch({
             type: 'ADD_INVITATION',
-            payload: { email:invitation, book_id: id }
+            payload: { email: invitation, book_id: id }
         });
-        // history,push('/');
+        setInvitation('')
     };
     return (
         <section>
-            <h2 className='author'>Invite Author</h2>
+            <h2 className='author'>Invite Author Here</h2>
             <form onSubmit={handleSubmit} className="add-invitation-form">
-                <div>
-                <input className='invitation'
-                    required
-                    placeholder='email'
-                    value={invitation}
-                    onChange={(event) => {
-                        setInvitation(event.target.value);
-                        emailValidation()
-                    }}
-
-                />
-                
-                    <button type="submit">
-                        submit
-                    </button>
+                <div class="form__group">
+                    <input
+                        type="text"
+                        class="form__input" id="name"
+                        required=""
+                        placeholder='email'
+                        value={invitation}
+                        onChange={(event) => {
+                            setInvitation(event.target.value);
+                            emailValidation()
+                        }}
+                    />
+                    <div>
+                    <button> submit </button>
                     {message}
+                    </div>
                 </div>
+              
             </form>
         </section>
     )

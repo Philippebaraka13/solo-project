@@ -58,7 +58,7 @@ function Book() {
                 ))}
                 </div>
                 </div>
-                <h3>{book.lock? 'is locked': "is not locked"}</h3>
+                <h3 className="isnotlock">{book.lock? 'is locked': "is not locked"}</h3>
             <div className="switch">
                {(book.user_id === user.id ) && <Switch checked={book.lock} onClick={handClick} />}
                

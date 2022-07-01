@@ -52,7 +52,8 @@ function Invitations() {
             <div className="userpage" >
             <div className="invitationpage">
                 <div className="content">
-                    <h1 contenteditable data-heading="Dimensions" className="newInvitation"> invitations </h1>
+                    <h1 contenteditable data-heading="Dimensions" className="newInvitation">Invitation</h1>
+                    <p className="pinvitation">These are the Books that you were Invited </p>
                 </div>
                 <div className="listnew">
                     {invitation.map(invitations => (

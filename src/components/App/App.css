@@ -19,7 +19,7 @@ Container
 -------------------------------------------------------------------------------- */
 
 .container {
-  padding: 20px;
+  padding: -7px;
 }
 
 /* --------------------------------------------------------------------------------
@@ -127,7 +127,9 @@ input {
   background-image: url("https://images.unsplash.com/photo-1533738630286-f1f4a61705f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
   background-repeat: repeat;
   background-size: 100%;
-  height: 100vh;
+  height: 120vh;
+  background-attachment: fixed;
+  
 
 }
 
@@ -226,7 +228,6 @@ p.para1:first-letter {
 
 .invitation {
   width: 70%;
-  color: deeppink;
   font-size: 1rem;
   text-transform: lowercase;
 
@@ -234,7 +235,7 @@ p.para1:first-letter {
 
 .newInvitation {
   text-align: center;
-
+  font-size: 45px;
   font-family: 'georgia';
   font-weight: bold;
   text-align: center;
@@ -243,12 +244,15 @@ p.para1:first-letter {
 
 .listnew {
   display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 7em;
   background-color: bisque;
   width: 55%;
   text-align: center;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  align-content: center;
+  align-items: stretch;
 }
 
 .invitationpage {
@@ -256,8 +260,84 @@ p.para1:first-letter {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+
 }
 
 .cover {
   background-color: #efefef;
 }
+.pinvitation{
+  color: #080202;
+  font-size: 20px;
+  font-family: 'georgia';
+  font-weight: bold;
+  text-align: center;
+  font-size: 45px;
+  font-family: fantasy;
+}
+.isnotlock{
+  margin: 39px;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-size: 62,5%;
+}
+
+/* body {
+  height: 100vh;
+	width: 100%;
+  background: #0f2027; /* fallback for old browsers */
+  /* background: linear-gradient(to right,#2c5364, #203a43, #0f2027);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+} */ */
+
+.form__label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s;
+  transform: translateY(0rem);
+}
+
+.form__input {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+	margin: 0 auto;
+  padding: 0.5rem 2rem;
+  border-radius: 0.2rem;
+  color: rgb(19, 11, 11);
+  border: none;
+ 
+  display: block;
+  
+  transition: all 0.3s;
+}
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+  transform: translateY(-4rem);
+}
+.form-submit-button {
+  background: #0066A2;
+  color: white;
+  border-style: outset;
+  border-color: #0066A2;
+  height: 50px;
+  width: 100px;
+  font: bold15px arial,sans-serif;
+  text-shadow: none;
+  }

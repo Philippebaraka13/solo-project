@@ -48,7 +48,7 @@ function Books() {
 <div className='userpage'>
         <div className="table2">
 
-            <h2 className="h22">Books</h2>
+            <h1 className="h22"> User Books</h1>
             <table>
                 <tbody>
                     <tr className="tr">
@@ -57,7 +57,7 @@ function Books() {
                         <th>View Book</th>
                         <th>Delete Book</th>
                         <th>Complete Book</th>
-                        <th>true/false</th>
+                        <th>Yes/No</th>
                         {/* <th>Begin to write</th> */}
                     </tr>
                     {bookContent.map(books => (
@@ -68,13 +68,13 @@ function Books() {
                                 <Link to={`/books/${books.id}`}>Detail</Link>
                             </td>
                             <td>
-                                <button onClick={() => {
+                                <button className="delete" onClick={() => {
                                     deleteBook(books)
                                     dispatch({ type: 'FETCH_BOOK' });
                                 }}>Delete</button>
                             </td>
                             <td>
-                                <button onClick={async () => {
+                                <button className="button" onClick={async () => {
                                     updateBook(books)
                                     dispatch({ type: 'FETCH_BOOK' });
                                 }}>complete</button>
@@ -86,9 +86,8 @@ function Books() {
                     }
                 </tbody>
             </table>
-            <NewBookForm />
 
-            <h2 className="h23">invitations books</h2>
+            <h2 className="h23">Book Invitions</h2>
             <table>
                 <tbody>
                     <tr className="tr">
@@ -109,7 +108,7 @@ function Books() {
                             {/* <Link to={`/books/${book.id}`}>Begin</Link> */}
                             <td>
                                 {/* <span>{books.id}</span> */}
-                                <button onClick={() => {
+                                <button className="delete" onClick={() => {
                                     deleteBook(book)
                                     dispatch({ type: 'FETCH_BOOK' });
                                     dispatch({ type: 'FETCH_BOOK_CONTENT' });

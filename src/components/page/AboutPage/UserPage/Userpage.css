@@ -1,41 +1,46 @@
 .table4 {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 85%;
-    text-align: left;
-    margin:5%
-    
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 85%;
+  text-align: left;
+  
+  margin: 2%
+}
 
-  }
-  
-  td, th {
-    border: 1px solid #87a218;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  .tr {
-    background-color: #d17f7f;
-  }
-.table3{
-  
-    text-align: center;
+td,
+th {
+  border: 1px solid #87a218;
+  text-align: left;
+  padding: 8px;
 }
-.tbody{
-    text-align: center;
-    background-color: #b5c189;
+
+.tr {
+  background-color: #d17f7f;
 }
-.h2{
-    color:rgb(217, 213, 149);
-    font-size: 30px; 
-    overflow-wrap: break-word;
-    
+
+.table3 {
+
+  text-align: center;
 }
-.p{
-  color:aliceblue;
+
+.tbody {
+  text-align: center;
+  background-color: #b5c189;
 }
+
+.h2 {
+  color: rgb(35 35 31);
+  font-size: 30px;
+  overflow-wrap: break-word;
+ 
+
+}
+
+.p {
+  color: aliceblue;
+}
+
 #box {
-  padding: 100px;
   text-align: center;
   min-width: 500px;
   font-size: 3em;
@@ -47,7 +52,7 @@
 /* flashlight ------------------------------------------------------ */
 
 #flashlight {
-  color: hsla(0,0%,0%,0);
+  color: hsla(0, 0%, 0%, 0);
   perspective: 80px;
   outline: none;
 }
@@ -57,10 +62,10 @@
 
 #flash {
   display: inline-block;
-  text-shadow: #bbb 0 0 1px, #fff 0 -1px 2px, #fff 0 -3px 2px, rgba(0,0,0,0.8) 0 30px 25px;
+  text-shadow: #bbb 0 0 1px, #fff 0 -1px 2px, #fff 0 -3px 2px, rgba(0, 0, 0, 0.8) 0 30px 25px;
   transition: margin-left 0.3s cubic-bezier(0, 1, 0, 1);
 }
-    
+
 #box:hover #flash {
   margin-left: 20px;
   transition: margin-left 1s cubic-bezier(0, 0.75, 0, 1);
@@ -71,14 +76,20 @@
 
 #light {
   display: inline-block;
-  text-shadow: #111 0 0 1px, rgba(255,255,255,0.1) 0 1px 3px;
+  text-shadow: #111 0 0 1px, rgba(255, 255, 255, 0.1) 0 1px 3px;
 }
 
 #box:hover #light {
   text-shadow: #fff 0 0 4px, #fcffbb 0 0 20px;
   transform: rotateY(-60deg);
-  transition:         transform 0.3s cubic-bezier(0, 0.75, 0, 1), text-shadow 0.1s ease-out;
+  transition: transform 0.3s cubic-bezier(0, 0.75, 0, 1), text-shadow 0.1s ease-out;
 }
+
 table {
   overflow-x: scroll;
+}
+
+.yourbook {
+  margin: 60px;
+  font-family: fantasy;
 }

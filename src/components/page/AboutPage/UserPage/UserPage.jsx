@@ -11,6 +11,7 @@ import './Userpage.css';
 // import NewInvitationForm from "../invitation/invitation";
 // import NewBookForm from "../newPage/newPage";
 // import './Books.css';
+import NewBookForm from '../../../newPage/newPage';
 
 function UserPage() {
   const books = useSelector(store => store.books);
@@ -31,9 +32,7 @@ function UserPage() {
   return (
     <div className='userpage'>
       <div className="container">
-        <h2 className='h2'>Welcome, {user.username}!</h2>
-        <p>Your ID is: {user.id}</p>
-        <LogOutButton className="btn" />
+        <h2 className='h2'>HELLO, {user.username}!</h2>
       </div>
       <div className="table3" >
       <div id="box">
@@ -41,7 +40,10 @@ function UserPage() {
     <span id="flash">BOOK</span>
     <span id="light">STORY</span>
   </p>
-</div>         
+</div>        
+<NewBookForm /> 
+
+<h1 className='yourbook'>Your Books</h1>
         <table className="table4" >
           <tbody className='tbody'>
             <tr className='tr'>
