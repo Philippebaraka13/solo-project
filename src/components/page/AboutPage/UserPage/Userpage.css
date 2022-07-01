@@ -28,6 +28,7 @@
 .h2{
     color:rgb(217, 213, 149);
     font-size: 30px; 
+    overflow-wrap: break-word;
     
 }
 .p{
@@ -77,4 +78,7 @@
   text-shadow: #fff 0 0 4px, #fcffbb 0 0 20px;
   transform: rotateY(-60deg);
   transition:         transform 0.3s cubic-bezier(0, 0.75, 0, 1), text-shadow 0.1s ease-out;
+}
+table {
+  overflow-x: scroll;
 }

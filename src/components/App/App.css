@@ -213,3 +213,7 @@ p.para1:first-letter {
   height: 100vh;
 }
 
+.author{
+  text-align: right;
+  text-overflow: ellipsis;
+}

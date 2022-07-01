@@ -23,7 +23,7 @@ const NewStoryForm = (props) => {
     };
     return (
         <section>
-            <h2>Add content</h2>
+            <h2 className='invitation2'>Add content</h2>
             <form onSubmit={handleSubmit} className="add-story-form">
                 <textarea className='textarea'
                     required
@@ -32,7 +32,7 @@ const NewStoryForm = (props) => {
                     onChange={(event) => setContent(event.target.value)} >
 
                 </textarea>
-                <div>
+                <div className='invitation2'>
                     <button type="submit">
                         submit
                     </button>

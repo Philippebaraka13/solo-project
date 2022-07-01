@@ -38,7 +38,7 @@ const NewInvitationForm = (props) => {
     };
     return (
         <section>
-            <h2>Invite Author</h2>
+            <h2 className='author'>Invite Author</h2>
             <form onSubmit={handleSubmit} className="add-invitation-form">
                 <div>
                 <input className='invitation'
