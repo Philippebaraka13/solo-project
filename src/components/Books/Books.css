@@ -22,6 +22,7 @@ table {
 .table2{
   
     text-align: center;
+    
 }
 tbody{
     text-align: center;
@@ -54,4 +55,12 @@ border: 5px solid rgb(95, 90, 90);
 border-radius: 20px;
 box-shadow: 5px 5px 5px rgb(95, 86, 86);
 text-shadow: none;
+}
+.ppp{
+  color:rgb(0, 0, 0);
+  font-family: fantasy;
+  font-size: 35px;
+}
+a {
+  padding: 18px;
 }

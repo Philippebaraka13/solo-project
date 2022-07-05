@@ -52,18 +52,19 @@ function Invitations() {
             <div className="userpage" >
             <div className="invitationpage">
                 <div className="content">
-                    <h1 contenteditable data-heading="Dimensions" className="newInvitation">Invitation</h1>
-                    <p className="pinvitation">These are the Books that you were Invited </p>
+                    <h1 contenteditable data-heading="Dimensions" className="newInvitation">Invitations</h1>
+                    <p className="pinvitation">these are the books that you were invited to participate in </p>
                 </div>
                 <div className="listnew">
                     {invitation.map(invitations => (
-                        <ul key={invitations.id} className="ul">
-                            <li>Title book: {invitations.title},   Description of book:  {invitations.description}</li>
+                        <span key={invitations.id} className="ul">
+                            <h3>Title: {invitations.title}</h3>
+                            <h3>book:  {invitations.description}</h3>
 
                             <button>
                                 <Link to={`/books/${invitations.id}`}>view book</Link>
                             </button>
-                        </ul>
+                        </span>
 
                     ))}
                 </div>

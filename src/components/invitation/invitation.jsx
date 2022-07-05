@@ -38,12 +38,13 @@ const NewInvitationForm = (props) => {
     };
     return (
         <section>
-            <h2 className='author'>Invite Author Here</h2>
+            
             <form onSubmit={handleSubmit} className="add-invitation-form">
-                <div class="form__group">
-                    <input
+            <h2 className='author'>Invite Author Here</h2> <div class="form__group">
+            <input
                         type="text"
                         class="form__input" id="name"
+                        className='newii'
                         required=""
                         placeholder='email'
                         value={invitation}
@@ -53,11 +54,10 @@ const NewInvitationForm = (props) => {
                         }}
                     />
                     <div>
-                    <button> submit </button>
-                    {message}
+                        <button type="submit" className='form-submit-button' >  submit </button>
+                        {message}
                     </div>
                 </div>
-              
             </form>
         </section>
     )

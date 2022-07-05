@@ -17,7 +17,7 @@ const NewBookForm = (props) => {
 
     dispatch({
       type: 'ADD_BOOK',
-      payload: { title: title, description: description, date: date }
+      payload: { title: title, description: description, date: "now" }
     });
     setTitle('');
     setDescription('');
@@ -26,8 +26,8 @@ const NewBookForm = (props) => {
   };
   return (
     <section>
-      <h2 className='h234'>Add New Book Here</h2>
-      <h3 className='h3'>For date just enter "Now"</h3>
+      <h2 className='h234'>Add a New Book Here</h2>
+      
       <form onSubmit={handleSubmit} className="add-book-form">
 <div class="form__group">
         <input
@@ -51,17 +51,17 @@ const NewBookForm = (props) => {
           />
            <label for="name" class="form__label">Description</label>
            </div>
-           <div class="form__group">
+           {/* <div class="form__group">
           <input
            type="text"
            class="form__input" id="name"
-            required
+            
             placeholder="Date"
             value={date}
             onChange={(event) => setDate(event.target.value)}
           />
           <label for="name" class="form__label">Date</label>
-          </div>
+          </div> */}
 
           <button type="submit" className='form-submit-button' >
             submit

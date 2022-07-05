@@ -48,7 +48,7 @@ function Books() {
 <div className='userpage'>
         <div className="table2">
 
-            <h1 className="h22"> User Books</h1>
+            <h1 className="h22"> My Books</h1>
             <table>
                 <tbody>
                     <tr className="tr">
@@ -57,7 +57,7 @@ function Books() {
                         <th>View Book</th>
                         <th>Delete Book</th>
                         <th>Complete Book</th>
-                        <th>Yes/No</th>
+                       
                         {/* <th>Begin to write</th> */}
                     </tr>
                     {bookContent.map(books => (
@@ -87,7 +87,8 @@ function Books() {
                 </tbody>
             </table>
 
-            <h2 className="h23">Book Invitions</h2>
+            <h2 className="h23">Book Invitations</h2>
+            <p className="ppp">You have been invited to participate in the following books:</p>
             <table>
                 <tbody>
                     <tr className="tr">
