@@ -6,8 +6,8 @@
 
 #Home page
 ## User can add new book and see the books that the own. 
+<img width="1425" alt="Screen Shot 2022-07-08 at 11 04 21 AM" src="https://user-images.githubusercontent.com/97373052/178035195-9f5704ae-9078-4c63-8464-1920a4b6f659.png">
 
-<img width="1428" alt="image" src="https://user-images.githubusercontent.com/97373052/178029221-72667b81-b2d3-4b83-99f6-866e827a4e40.png">
 
 #user books 
 
