@@ -1,6 +1,6 @@
 
 # Bookstory
-## Collaborate with others while writing your next best seller
+## project is an app that gives the user the ability to write a book not just as the only author but he can invite his friends, family members to join the book by email to be  a writer. That allows the readers to have different perspectives of the topic from different people. Also, it can be used to write souvenirs with coworkers, classmates, and in  family to share the moment together by keeping it written in a book.
 
 <img width="1428" alt="image" src="https://user-images.githubusercontent.com/97373052/178028771-5c66db87-4025-44a7-9455-b839b4f04d8b.png">
 
